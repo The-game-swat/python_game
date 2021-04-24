@@ -2,6 +2,7 @@ import os
 import random
 from random import randint
 import time
+
 typingsleep = randint(1, 2)
 
 print("\n\nПривет:) Добро пожаловать в игру The_Game_swat")
@@ -20,17 +21,13 @@ while True:
         break
     elif command == "help":
         print("""Игора The_Game_swat
-
         Игра призвана тренировать интуицию, и поможет проверить твою удачливость!
         В неравном бою между человек и машиной тебе прийдется не сладко!
-
         Правила игры:
         1. Игра на подобе бесцеллера "21 очко";
         2. Нужно набрать количество очков как можно ближе к 21, НО не более иначе соперник победит.
         3. И только для тебя, нежданчик, за каждый ход, ты будешь терять здоровье, но и за каждую победу будешь оздоравливаться!
-
         Дерзай:Ъ
-
         """)
     elif command == "exit":
         exit()
@@ -38,8 +35,6 @@ while True:
         print("")
 
 # Конфиг игры, стратовые значения и ограничения
-lite_hit = random.randrange(18, 25)
-middle_hit = random.randrange(10, 35)
 count = 0
 count_comp = 0
 healer_user = 0
@@ -50,26 +45,38 @@ health_comp = 100
 # Основной цикл игры, в котором происходят взаимоействие с пользователем
 while True:
     koloda = [6, 7, 8, 9, 10, 2, 3, 4, 11]
+    lite_hit = random.randrange(18, 25)
+    middle_hit = random.randrange(10, 35)
     random.shuffle(koloda)
-    
+
     choice = input('\nВзять карту? y/n: >')
     if choice == 'y':
         current = koloda.pop()
         current_comp = koloda.pop()
-        print('Вам выпало %s очков' % current +
-              '. И нанесен урон %d' % lite_hit)
         count += current
         count_comp += current_comp
         health_user -= lite_hit
         health_comp -= middle_hit
+        print('Вам выпало %s очков' % current +
+              '. И нанесен урон %d' % lite_hit)
 
     if count > 21:
         print('Соперник победил!')
         print(health_comp)
         break
+
     elif count == 21:
         print('Поздравляю, вы победили!')
         break
+
+    elif count_comp > 21:
+        print('Поздравляю, вы победили!')
+        break
+    elif count_comp == 21:
+        print('Соперник победил!')
+        print(health_comp)
+        break
+
     else:
         print('Всего: %d очков.' % count +
               ' И %s здоровье' % health_user + '\n' +
@@ -78,6 +85,7 @@ while True:
         print('Ход соперника! Соперник походил!')
         print(' =' * 20)
         time.sleep(typingsleep)
+
 
     if choice == 'n':
         if count > count_comp:

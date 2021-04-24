@@ -8,6 +8,7 @@ print("\n\nПривет:) Добро пожаловать в игру The_Game_s
 
 time.sleep(typingsleep)
 
+# Привесвие пользователя и основное меню игры
 while True:
     print("""\n
     Введите start - чтобы начать игру.
@@ -36,7 +37,7 @@ while True:
     else:
         print("")
 
-
+# Конфиг игры, стратовые значения и ограничения
 lite_hit = random.randrange(18, 25)
 middle_hit = random.randrange(10, 35)
 count = 0
@@ -46,15 +47,11 @@ healer_comp = 0
 health_user = 100
 health_comp = 100
 
-
-
+# Основной цикл игры, в котором происходят взаимоействие с пользователем
 while True:
     koloda = [6, 7, 8, 9, 10, 2, 3, 4, 11]
     random.shuffle(koloda)
-
-    # print('\nКоличество Очков: %s' % count)
-    # print('Количество Здоровья: %s' % health_user)
-
+    
     choice = input('\nВзять карту? y/n: >')
     if choice == 'y':
         current = koloda.pop()

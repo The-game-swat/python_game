@@ -100,20 +100,21 @@ while True:
             if count_comp > count:
                 h = random.randint(18, 25)
                 a = h + health_user
-                print('Вы победили! УРА! Получаешь + %s к здоровью' % h)
+                print('Сорян, БРО! Ты проиграл \nСоперник получает + %s к здоровью' % h)
                 time.sleep(typingsleep)
                 print('У вас - %d очков. ' % count + ' Здоровье - %s' % a)
                 ' - ' * 20
                 print('У соперника - %d очков.' % count_comp + ' Здоровье - %s' % health_comp)
+                break
             else:
                 h = random.randint(18, 25)
                 a = h + healer_comp
-                print('Сорян, БРО! Ты проиграл \nСоперник получает + %s к здоровью' % h)
+                print('Вы победили! УРА! Получаешь + %s к здоровью' % h)
                 time.sleep(typingsleep)
                 print('У вас - %d очков.' % count + ' Здоровье - %s' % a)
                 ' - ' * 20
                 print('У соперника - %d очков.' % count_comp + 'Здоровье - %s' % health_comp)
-            break
+                break
 print('#' * 20)
 print('Спасибо за игру!')
 print('#' * 20)

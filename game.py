@@ -86,7 +86,6 @@ while True:
         print(' =' * 20)
         time.sleep(typingsleep)
 
-
     if choice == 'n':
         if count > count_comp:
             h = random.randint(18, 25)
@@ -115,6 +114,7 @@ while True:
                 ' - ' * 20
                 print('У соперника - %d очков.' % count_comp + 'Здоровье - %s' % health_comp)
                 break
+        break
 print('#' * 20)
 print('Спасибо за игру!')
 print('#' * 20)

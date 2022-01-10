@@ -5,7 +5,7 @@ import time
 
 typingsleep = randint(1, 2)
 
-print("\n\nПривет:) Добро пожаловать в игру The_Game_swat")
+print("\n\nПривет:) Добро пожаловать в игру The_Game_SWAT")
 
 time.sleep(typingsleep)
 
